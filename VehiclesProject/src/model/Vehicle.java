@@ -1,9 +1,9 @@
-package com.vehicles.project;
+package model;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Vehicle {
+public abstract class Vehicle 	{
 
 	protected String plate;
 	protected String brand;

@@ -1,4 +1,4 @@
-package com.vehicles.project;
+package model;
 
 public class Wheel {
 	private String brand;

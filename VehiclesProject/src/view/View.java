@@ -1,26 +1,31 @@
-package com.vehicles.project;
+package view;
 
 import java.util.Scanner;
 
 public class View {
 	Scanner in = new Scanner(System.in);
-	Controller controller = new Controller();
-
 	
 	public String getPlate() {
 
-		String plate = "";
-		while (!controller.validatePlate(plate)) {
-			System.out.print("Matrícula?  ");
-			plate  = in.nextLine();
-		}
+		System.out.print("Matrícula?  ");
+		String plate  = in.nextLine();
         return plate;
 	}
 	
 	
+	public String getString(String text) {
+		String inputText = "";
+		do {
+		System.out.printf("%s", text);
+		inputText= in.nextLine();
+		return inputText;
+		} while (inputText == "");
+	}	
+	
+	
 	public double getDiameter(String text) {
 		double WheelDiameter = 0;
-		while (controller.validateDiameter(WheelDiameter)) {
+		while (!(0.4 < WheelDiameter &&  WheelDiameter < 4)) {
 			System.out.printf("%s", text);
 			WheelDiameter = getNumber();
 			in.nextLine();
@@ -33,7 +38,7 @@ public class View {
 		String answer = "";
 		
 		while (!answer.equals("c") && !answer.equals("m")) {
-			System.out.printf("Que desitges comprar, un cotxe o una moto? (c: cotxe/ b: bicicleta): ");
+			System.out.printf("Que desitges comprar, un cotxe o una moto? (c: cotxe/ m: moto): ");
 			answer = in.nextLine();	
 			}
 		return answer;
